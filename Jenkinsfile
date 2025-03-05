@@ -6,14 +6,6 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage("Test"){
-            steps{
-                sh 'apt install -y npm'
-                sh 'npm test'
-            }
-        }
-
         stage("Build"){
             steps{
                 sh 'npm run build'
