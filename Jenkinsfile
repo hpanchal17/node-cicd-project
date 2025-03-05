@@ -2,7 +2,7 @@ pipeline {
     agent any
      environment {
         IMAGE_NAME = "hp171100/my-node-app"
-        IMAGE_VERSION = "2.0"
+        IMAGE_VERSION = "3.0"
     }
     stages{
         stage("checkout"){
@@ -32,7 +32,7 @@ pipeline {
                     sh 'echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin'
                     sh 'docker push $IMAGE_NAME:$IMAGE_VERSION'
                     sh 'docker push $IMAGE_NAME:latest'
-                    sh 'docker logout'
+                    sh 'docker logout'  
                 }
             }
         }
