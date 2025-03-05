@@ -1,6 +1,6 @@
 #stage 1
 FROM node:18-alpine AS nodeimg
-WORKDIR /apps
+WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
